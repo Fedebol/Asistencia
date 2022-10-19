@@ -169,8 +169,50 @@ namespace Prj_Capa_Datos
             }
             return null;
         }
-            
 
+        public bool BD_Verificar_DNIdePersonal(string dni)
+        {
+            bool funtionRetornValue = false;
+            Int32 xfil = 0;
+
+            SqlConnection Cn = new SqlConnection();
+            SqlCommand cmd = new SqlCommand();
+            Cn.ConnectionString = Conectar();
+            var _with1 = cmd;
+            _with1.CommandText = "Sp_Validar_Dni";
+            _with1.Connection = Cn;
+            _with1.CommandTimeout = 20;
+            _with1.CommandType = CommandType.StoredProcedure;
+            _with1.Parameters.AddWithValue("@Dni", dni);
+            try
+            {
+                Cn.Open();
+                xfil = (Int32)cmd.ExecuteScalar();
+                if (xfil > 0)
+                {
+                    funtionRetornValue = true;
+                }
+                else
+                {
+                    funtionRetornValue = false;
+                }
+
+                cmd.Parameters.Clear();
+                cmd.Dispose();
+                cmd = null;
+                Cn.Close();
+                Cn = null;
+            }
+            catch (Exception ex)
+            {
+                if (Cn.State == ConnectionState.Open)
+                    Cn.Close();
+                cmd.Dispose();
+                cmd = null;
+                MessageBox.Show("Algo malo paso: " + ex.Message, "Advertencia de seguridad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return funtionRetornValue;
+        }
 
     }
 }
