@@ -1,0 +1,92 @@
+﻿using Prj_Capa_Negocio;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+
+
+namespace MicroSisPlani
+{
+    public partial class Frm_Login : Form
+    {
+        public Frm_Login()
+        {
+            InitializeComponent();
+        }
+
+        private void Frm_Login_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private bool ValidarTextBox()
+        {
+           if (txt_usu.Text.Trim().Length == 0) { MessageBox.Show("Ingresa tu Usuario", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); txt_usu.Focus(); return false; }
+            if (txt_pass.Text.Trim().Length == 0) { MessageBox.Show("Ingresa tu Contraseña", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); txt_pass.Focus(); return false; }
+            return true;
+        }
+
+        private void AccederAlSistema()
+        {
+            RN_Usuario obj = new RN_Usuario();
+            DataTable dt = new DataTable();
+            int veces = 0;
+
+            if (ValidarTextBox() == false) return;
+
+            string usu, pass;
+            usu = txt_usu.Text.Trim();
+            pass = txt_pass.Text.Trim();
+
+            if (obj.RN_Verificar_Acceso(usu, pass) == true)
+            {
+
+
+                Frm_Principal prin = new Frm_Principal();
+
+                this.Hide();
+                prin.Show();
+            }
+            else
+            {
+                MessageBox.Show("Usuario o contraseña incorrectos", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                txt_pass.Text = "";
+                txt_usu.Text = "";
+                txt_usu.Focus();
+                veces += 1;
+
+                if (veces == 3)
+                {
+                    MessageBox.Show("Numero maximo de intentos alcanzado", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    Application.Exit();
+                }
+
+            }
+
+        }
+
+        private void btn_Salir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void pnl_titulo_MouseMove(object sender, MouseEventArgs e)
+        {
+            if(e.Button == MouseButtons.Left)
+            {
+                Utilitarios u = new Utilitarios();
+                u.Mover_formulario(this);
+            }
+        }
+
+        private void btn_Aceptar_Click(object sender, EventArgs e)
+        {
+            AccederAlSistema();
+        }
+    }
+}
