@@ -61,3 +61,12 @@ C:\Users\Fede\OneDrive\Escritorio\asistencia\Sln_MicroSisPlantilla\Prj_Capa_Dato
 C:\Users\Fede\OneDrive\Escritorio\asistencia\Sln_MicroSisPlantilla\Prj_Capa_Datos\obj\Debug\Prj_Capa_Datos.csproj.CopyComplete
 C:\Users\Fede\OneDrive\Escritorio\asistencia\Sln_MicroSisPlantilla\Prj_Capa_Datos\obj\Debug\Prj_Capa_Datos.dll
 C:\Users\Fede\OneDrive\Escritorio\asistencia\Sln_MicroSisPlantilla\Prj_Capa_Datos\obj\Debug\Prj_Capa_Datos.pdb
+C:\Users\Fede\OneDrive\Escritorio\asistencia\Asistencia\Prj_Capa_Datos\bin\Debug\Prj_Capa_Datos.dll
+C:\Users\Fede\OneDrive\Escritorio\asistencia\Asistencia\Prj_Capa_Datos\bin\Debug\Prj_Capa_Datos.pdb
+C:\Users\Fede\OneDrive\Escritorio\asistencia\Asistencia\Prj_Capa_Datos\bin\Debug\Prj_Capa_Entidad.dll
+C:\Users\Fede\OneDrive\Escritorio\asistencia\Asistencia\Prj_Capa_Datos\bin\Debug\Prj_Capa_Entidad.pdb
+C:\Users\Fede\OneDrive\Escritorio\asistencia\Asistencia\Prj_Capa_Datos\obj\Debug\Prj_Capa_Datos.csproj.AssemblyReference.cache
+C:\Users\Fede\OneDrive\Escritorio\asistencia\Asistencia\Prj_Capa_Datos\obj\Debug\Prj_Capa_Datos.csproj.CoreCompileInputs.cache
+C:\Users\Fede\OneDrive\Escritorio\asistencia\Asistencia\Prj_Capa_Datos\obj\Debug\Prj_Capa_Datos.csproj.CopyComplete
+C:\Users\Fede\OneDrive\Escritorio\asistencia\Asistencia\Prj_Capa_Datos\obj\Debug\Prj_Capa_Datos.dll
+C:\Users\Fede\OneDrive\Escritorio\asistencia\Asistencia\Prj_Capa_Datos\obj\Debug\Prj_Capa_Datos.pdb

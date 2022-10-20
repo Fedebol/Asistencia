@@ -75,3 +75,14 @@ C:\Users\Fede\OneDrive\Escritorio\asistencia\Sln_MicroSisPlantilla\Prj_Capa_Nego
 C:\Users\Fede\OneDrive\Escritorio\asistencia\Sln_MicroSisPlantilla\Prj_Capa_Negocio\obj\Debug\Prj_Capa_Negocio.csproj.CopyComplete
 C:\Users\Fede\OneDrive\Escritorio\asistencia\Sln_MicroSisPlantilla\Prj_Capa_Negocio\obj\Debug\Prj_Capa_Negocio.dll
 C:\Users\Fede\OneDrive\Escritorio\asistencia\Sln_MicroSisPlantilla\Prj_Capa_Negocio\obj\Debug\Prj_Capa_Negocio.pdb
+C:\Users\Fede\OneDrive\Escritorio\asistencia\Asistencia\Prj_Capa_Negocio\bin\Debug\Prj_Capa_Negocio.dll
+C:\Users\Fede\OneDrive\Escritorio\asistencia\Asistencia\Prj_Capa_Negocio\bin\Debug\Prj_Capa_Negocio.pdb
+C:\Users\Fede\OneDrive\Escritorio\asistencia\Asistencia\Prj_Capa_Negocio\bin\Debug\Prj_Capa_Datos.dll
+C:\Users\Fede\OneDrive\Escritorio\asistencia\Asistencia\Prj_Capa_Negocio\bin\Debug\Prj_Capa_Entidad.dll
+C:\Users\Fede\OneDrive\Escritorio\asistencia\Asistencia\Prj_Capa_Negocio\bin\Debug\Prj_Capa_Datos.pdb
+C:\Users\Fede\OneDrive\Escritorio\asistencia\Asistencia\Prj_Capa_Negocio\bin\Debug\Prj_Capa_Entidad.pdb
+C:\Users\Fede\OneDrive\Escritorio\asistencia\Asistencia\Prj_Capa_Negocio\obj\Debug\Prj_Capa_Negocio.csproj.AssemblyReference.cache
+C:\Users\Fede\OneDrive\Escritorio\asistencia\Asistencia\Prj_Capa_Negocio\obj\Debug\Prj_Capa_Negocio.csproj.CoreCompileInputs.cache
+C:\Users\Fede\OneDrive\Escritorio\asistencia\Asistencia\Prj_Capa_Negocio\obj\Debug\Prj_Capa_Negocio.csproj.CopyComplete
+C:\Users\Fede\OneDrive\Escritorio\asistencia\Asistencia\Prj_Capa_Negocio\obj\Debug\Prj_Capa_Negocio.dll
+C:\Users\Fede\OneDrive\Escritorio\asistencia\Asistencia\Prj_Capa_Negocio\obj\Debug\Prj_Capa_Negocio.pdb
