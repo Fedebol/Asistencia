@@ -102,6 +102,7 @@ namespace MicroSisPlani
             if(e.KeyCode == Keys.Enter)
             {
                 txt_pass.Focus();
+
             }
         }
     }
