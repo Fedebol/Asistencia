@@ -184,6 +184,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timerFalta = new System.Windows.Forms.Timer(this.components);
+            this.dtp_fechadeldia = new System.Windows.Forms.DateTimePicker();
+            this.verAsistenciasDelDíaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_titu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_user)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -1033,10 +1035,11 @@
             // 
             this.elTabPage3.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.elTabPage3.BackgroundStyle.SolidColor = System.Drawing.Color.White;
-            this.elTabPage3.CaptionImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            this.elTabPage3.CaptionImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.elTabPage3.CaptionTextStyle.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.elTabPage3.CaptionTextStyle.Text = "     Asistencia";
             this.elTabPage3.CaptionTextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.elTabPage3.Controls.Add(this.dtp_fechadeldia);
             this.elTabPage3.Controls.Add(this.panel5);
             this.elTabPage3.Controls.Add(this.btn_Asis_With_Huella);
             this.elTabPage3.Controls.Add(this.lsv_asis);
@@ -1081,6 +1084,7 @@
             this.lbl_lupaAsis.Size = new System.Drawing.Size(24, 24);
             this.lbl_lupaAsis.TabIndex = 32;
             this.toolTip1.SetToolTip(this.lbl_lupaAsis, "Buscar Personal por Nombre o Dni");
+            this.lbl_lupaAsis.Click += new System.EventHandler(this.lbl_lupaAsis_Click);
             // 
             // txt_buscarAsis
             // 
@@ -1100,6 +1104,7 @@
             this.txt_buscarAsis.Size = new System.Drawing.Size(244, 32);
             this.txt_buscarAsis.TabIndex = 31;
             this.txt_buscarAsis.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_buscarAsis.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_buscarAsis_KeyDown);
             // 
             // btn_Asis_With_Huella
             // 
@@ -1145,9 +1150,10 @@
             this.reportesToolStripMenuItem,
             this.bt_imprimirAsistenciaPorPersonal,
             this.toolStripSeparator15,
-            this.bt_imprimirAsistenciaDelMes});
+            this.bt_imprimirAsistenciaDelMes,
+            this.verAsistenciasDelDíaToolStripMenuItem});
             this.subMenuAsistencia.Name = "contextMenuStrip1";
-            this.subMenuAsistencia.Size = new System.Drawing.Size(253, 242);
+            this.subMenuAsistencia.Size = new System.Drawing.Size(253, 290);
             // 
             // toolStripMenuItem1
             // 
@@ -1195,6 +1201,7 @@
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
             this.toolStripMenuItem4.Size = new System.Drawing.Size(252, 26);
             this.toolStripMenuItem4.Text = "Mostrar Todo Asistencia";
+            this.toolStripMenuItem4.Click += new System.EventHandler(this.toolStripMenuItem4_Click);
             // 
             // toolStripSeparator14
             // 
@@ -2302,6 +2309,23 @@
             // 
             this.toolTip1.IsBalloon = true;
             // 
+            // dtp_fechadeldia
+            // 
+            this.dtp_fechadeldia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_fechadeldia.Location = new System.Drawing.Point(1136, 255);
+            this.dtp_fechadeldia.Name = "dtp_fechadeldia";
+            this.dtp_fechadeldia.Size = new System.Drawing.Size(78, 20);
+            this.dtp_fechadeldia.TabIndex = 469;
+            this.dtp_fechadeldia.Value = new System.DateTime(2022, 10, 21, 18, 52, 56, 0);
+            this.dtp_fechadeldia.Visible = false;
+            // 
+            // verAsistenciasDelDíaToolStripMenuItem
+            // 
+            this.verAsistenciasDelDíaToolStripMenuItem.Name = "verAsistenciasDelDíaToolStripMenuItem";
+            this.verAsistenciasDelDíaToolStripMenuItem.Size = new System.Drawing.Size(252, 26);
+            this.verAsistenciasDelDíaToolStripMenuItem.Text = "Ver Asistencias del día";
+            this.verAsistenciasDelDíaToolStripMenuItem.Click += new System.EventHandler(this.verAsistenciasDelDíaToolStripMenuItem_Click);
+            // 
             // Frm_Principal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -2552,5 +2576,7 @@
         private System.Windows.Forms.ToolStripMenuItem bt_imprimirAsistenciaPorPersonal;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator15;
         private System.Windows.Forms.ToolStripMenuItem bt_imprimirAsistenciaDelMes;
+        private System.Windows.Forms.DateTimePicker dtp_fechadeldia;
+        private System.Windows.Forms.ToolStripMenuItem verAsistenciasDelDíaToolStripMenuItem;
     }
 }
