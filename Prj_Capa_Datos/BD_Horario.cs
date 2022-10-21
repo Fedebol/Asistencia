@@ -53,7 +53,29 @@ namespace Prj_Capa_Datos
             }
         }
       
-
+        public  DataTable BD_Leer_horarios()
+        {
+            SqlConnection Cn = new SqlConnection();
+            try
+            {
+                Cn.ConnectionString = Conectar();
+                SqlDataAdapter Da = new SqlDataAdapter();
+                Da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                //
+                DataTable Datos = new DataTable();
+                Da.Fill(Datos);
+                Da = null;
+                return Datos;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("error al consultar horario" + ex.Message, "Infome del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                if (Cn.State == ConnectionState.Open) Cn.Close();
+                Cn.Dispose();
+                Cn = null;
+                return null;
+            }
+        }
 
 
 

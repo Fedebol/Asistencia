@@ -12,6 +12,9 @@ using System.Windows.Forms;
 using Prj_Capa_Datos;
 using Prj_Capa_Entidad;
 using MicroSisPlani.Msm_Forms;
+using MicroSisPlani.Informes;
+using System.IO;
+
 
 namespace MicroSisPlani
 {
@@ -29,7 +32,34 @@ namespace MicroSisPlani
             
         }
 
+        public void Cargar_Datos_usuario()
+        {
+            try
+            {
+                Frm_Filtro xfil = new Frm_Filtro();
+                xfil.Show();
+                MessageBox.Show("Bienvenid@: " + Cls_Libreria.Apellidos, "al sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                xfil.Hide();
 
+                Lbl_NomUsu.Text = Cls_Libreria.Apellidos;
+                lbl_rolNom.Text = Cls_Libreria.Rol;
+
+                if (Cls_Libreria.Foto.Trim().Length == 0 | Cls_Libreria.Foto == null) return;
+
+                if (File.Exists(Cls_Libreria.Foto) == true)
+                {
+                    pic_user.Load(Cls_Libreria.Foto);
+                }
+                else
+                {
+                    pic_user.Image = Properties.Resources.user;
+                }
+            }
+            catch (Exception ex)
+            {
+
+            }
+        }
 
         private void pnl_titu_MouseMove(object sender, MouseEventArgs e)
         {
@@ -70,7 +100,22 @@ namespace MicroSisPlani
 
         private void Frm_Principal_FormClosing(object sender, FormClosingEventArgs e)
         {
-            
+            Frm_Filtro fil = new Frm_Filtro();
+            Frm_Sino sino = new Frm_Sino();
+
+            fil.Show();
+            sino.Lbl_msm1.Text = "¿Estas Seguro de salir y abandonar el Sistema?";
+            sino.ShowDialog();
+            fil.Hide();
+
+            if (Convert.ToString(sino.Tag)== "Si")
+            {
+                Application.ExitThread();
+            }
+            else
+            {
+                e.Cancel = true;
+            }
        
 
         }
@@ -267,6 +312,79 @@ namespace MicroSisPlani
                     Cargar_todo_Personal();
                 }
             }
+
+        }
+
+        private void btn_SaveHorario_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                RN_Horario hor = new RN_Horario();
+                EN_Horario por = new EN_Horario();
+                Frm_Filtro fil = new Frm_Filtro();
+                Frm_Msm_Bueno ok = new Frm_Msm_Bueno();
+                Frm_Advertencia adver = new Frm_Advertencia();
+
+
+                por.Idhora = lbl_idHorario.Text;
+                por.HoEntrada = dtp_horaIngre.Value;
+                por.HoTole = dtp_hora_tolercia.Value;
+                por.HoLimite = Dtp_Hora_Limite.Value;
+                por.HoSalida = dtp_horaSalida.Value;
+
+                hor.RN_Actualizar_Horario(por);
+
+                if (BD_Horario.saved == true)
+                {
+                    fil.Show();
+                    ok.Lbl_msm1.Text = "El horario fue actualizado";
+                    ok.ShowDialog();
+                    fil.Hide();
+
+                    elTabPage4.Visible = false;
+                    elTab1.SelectedTabPageIndex = 0;
+
+                }
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void bt_Config_Click(object sender, EventArgs e)
+        {
+            elTabPage4.Visible = true;
+            elTab1.SelectedTabPageIndex = 3;
+            CargarHorarios();
+
+           // string tipo;
+           // tipo = RN_Utilitario.RN_Listar_TipoFalta(5);
+          //  if (tipo.Trim() == "SI")
+          //  {
+           //     rdb_ActivarRobot.Checked = true;
+          //      rdb_Desact_Robot.Checked = false;
+          //  }
+          //  else if(tipo.Trim() == "NO")
+          //  {
+          //      rdb_Desact_Robot.Checked = true;
+          //      rdb_ActivarRobot.Checked = false;
+          //  }
+        }
+
+        private void CargarHorarios()
+        {
+            RN_Horario obj = new RN_Horario();
+            DataTable dt = new DataTable();
+
+            dt = obj.RN_Leer_Horarios();
+            if (dt.Rows.Count == 0) return;
+
+            lbl_idHorario.Text = Convert.ToString(dt.Rows[0]["Id_Hor"]);
+            dtp_horaIngre.Value = Convert.ToDateTime(dt.Rows[0]["HoEntrada"]);
+            dtp_horaSalida.Value = Convert.ToDateTime(dt.Rows[0]["HoSalida"]);
+            dtp_hora_tolercia.Value = Convert.ToDateTime(dt.Rows[0]["MiTolrncia"]);
+            Dtp_Hora_Limite.Value = Convert.ToDateTime(dt.Rows[0]["HoLimite"]);
 
         }
     }

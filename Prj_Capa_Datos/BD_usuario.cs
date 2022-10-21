@@ -58,6 +58,30 @@ namespace Prj_Capa_Datos
             return funtionRetornValue;
         }
 
+        public DataTable BD_Leer_Datos_Usuario(string Usuario)
+        {
+            SqlConnection cn = new SqlConnection();
+            try
+            {
+                cn.ConnectionString = Conectar();
+                SqlDataAdapter da = new SqlDataAdapter("Sp_Usuario_Login", cn);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@Usuario", Usuario);
+                DataTable dt = new DataTable();
 
+                da.Fill(dt);
+                da = null;
+                return dt;
+            }
+            catch (Exception ex)
+            {
+                if (cn.State == ConnectionState.Open)
+                    cn.Close();
+                cn = null;
+                MessageBox.Show("Algo malo paso: " + ex.Message, "Advertencia de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            return null;
+        }
     }
 }

@@ -474,6 +474,7 @@
             this.bt_Config.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             this.bt_Config.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bt_Config.VisualStyle = Klik.Windows.Forms.v1.EntryLib.ButtonVisualStyles.Custom;
+            this.bt_Config.Click += new System.EventHandler(this.bt_Config_Click);
             // 
             // bt_exploJusti
             // 
@@ -1823,6 +1824,7 @@
             this.btn_SaveHorario.TextStyle.Text = "Listo";
             this.btn_SaveHorario.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_SaveHorario.VisualStyle = Klik.Windows.Forms.v1.EntryLib.ButtonVisualStyles.Custom;
+            this.btn_SaveHorario.Click += new System.EventHandler(this.btn_SaveHorario_Click);
             // 
             // dtp_hora_tolercia
             // 

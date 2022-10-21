@@ -19,7 +19,11 @@ namespace Prj_Capa_Negocio
 
         }
 
-
+        public DataTable RN_Leer_Datos_Usuario(string Usuario)
+        {
+            BD_Usuario obj = new BD_Usuario();
+            return obj.BD_Leer_Datos_Usuario(Usuario);
+        }
 
 
     }

@@ -85,9 +85,9 @@
             this.Label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.Label1.Location = new System.Drawing.Point(101, 77);
             this.Label1.Name = "Label1";
-            this.Label1.Size = new System.Drawing.Size(150, 39);
+            this.Label1.Size = new System.Drawing.Size(151, 39);
             this.Label1.TabIndex = 20;
-            this.Label1.Text = "Microsell";
+            this.Label1.Text = "MarketC";
             // 
             // ElDivider1
             // 
@@ -289,9 +289,9 @@
             this.Label14.ForeColor = System.Drawing.Color.DimGray;
             this.Label14.Location = new System.Drawing.Point(21, 428);
             this.Label14.Name = "Label14";
-            this.Label14.Size = new System.Drawing.Size(108, 17);
+            this.Label14.Size = new System.Drawing.Size(77, 17);
             this.Label14.TabIndex = 459;
-            this.Label14.Text = "Microsell ® 2018";
+            this.Label14.Text = "FNB ® 2022";
             // 
             // Panel1
             // 
