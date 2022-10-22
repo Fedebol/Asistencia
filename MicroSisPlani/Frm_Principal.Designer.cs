@@ -85,6 +85,7 @@
             this.Bt_NewPerso = new System.Windows.Forms.Button();
             this.elDivider1 = new Klik.Windows.Forms.v1.EntryLib.ELDivider();
             this.elTabPage3 = new Klik.Windows.Forms.v1.EntryLib.ELTabPage();
+            this.dtp_fechadeldia = new System.Windows.Forms.DateTimePicker();
             this.panel5 = new System.Windows.Forms.Panel();
             this.lbl_lupaAsis = new System.Windows.Forms.Label();
             this.txt_buscarAsis = new Bunifu.Framework.UI.BunifuMaterialTextbox();
@@ -104,6 +105,7 @@
             this.bt_imprimirAsistenciaPorPersonal = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator15 = new System.Windows.Forms.ToolStripSeparator();
             this.bt_imprimirAsistenciaDelMes = new System.Windows.Forms.ToolStripMenuItem();
+            this.verAsistenciasDelDíaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.elLabel15 = new Klik.Windows.Forms.v1.EntryLib.ELLabel();
             this.elLabel14 = new Klik.Windows.Forms.v1.EntryLib.ELLabel();
             this.elLabel13 = new Klik.Windows.Forms.v1.EntryLib.ELLabel();
@@ -184,8 +186,6 @@
             this.label8 = new System.Windows.Forms.Label();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.timerFalta = new System.Windows.Forms.Timer(this.components);
-            this.dtp_fechadeldia = new System.Windows.Forms.DateTimePicker();
-            this.verAsistenciasDelDíaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.pnl_titu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pic_user)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -817,7 +817,7 @@
             this.toolStripSeparator7,
             this.bt_solicitarJustificacion});
             this.SubMenu_Person.Name = "contextMenuStrip1";
-            this.SubMenu_Person.Size = new System.Drawing.Size(209, 222);
+            this.SubMenu_Person.Size = new System.Drawing.Size(209, 244);
             // 
             // bt_nuevoPersonal
             // 
@@ -854,6 +854,7 @@
             this.bt_registrarHuellaDigital.Name = "bt_registrarHuellaDigital";
             this.bt_registrarHuellaDigital.Size = new System.Drawing.Size(208, 26);
             this.bt_registrarHuellaDigital.Text = "Registrar Huella Digital";
+            this.bt_registrarHuellaDigital.Click += new System.EventHandler(this.bt_registrarHuellaDigital_Click);
             // 
             // toolStripSeparator2
             // 
@@ -1035,7 +1036,7 @@
             // 
             this.elTabPage3.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.elTabPage3.BackgroundStyle.SolidColor = System.Drawing.Color.White;
-            this.elTabPage3.CaptionImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
+            this.elTabPage3.CaptionImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.elTabPage3.CaptionTextStyle.Font = new System.Drawing.Font("Century Gothic", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.elTabPage3.CaptionTextStyle.Text = "     Asistencia";
             this.elTabPage3.CaptionTextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -1062,6 +1063,16 @@
             this.elTabPage3.Name = "elTabPage3";
             this.elTabPage3.Size = new System.Drawing.Size(1240, 481);
             this.elTabPage3.Visible = false;
+            // 
+            // dtp_fechadeldia
+            // 
+            this.dtp_fechadeldia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtp_fechadeldia.Location = new System.Drawing.Point(1136, 255);
+            this.dtp_fechadeldia.Name = "dtp_fechadeldia";
+            this.dtp_fechadeldia.Size = new System.Drawing.Size(78, 20);
+            this.dtp_fechadeldia.TabIndex = 469;
+            this.dtp_fechadeldia.Value = new System.DateTime(2022, 10, 21, 18, 52, 56, 0);
+            this.dtp_fechadeldia.Visible = false;
             // 
             // panel5
             // 
@@ -1153,7 +1164,7 @@
             this.bt_imprimirAsistenciaDelMes,
             this.verAsistenciasDelDíaToolStripMenuItem});
             this.subMenuAsistencia.Name = "contextMenuStrip1";
-            this.subMenuAsistencia.Size = new System.Drawing.Size(253, 290);
+            this.subMenuAsistencia.Size = new System.Drawing.Size(253, 268);
             // 
             // toolStripMenuItem1
             // 
@@ -1242,6 +1253,13 @@
             this.bt_imprimirAsistenciaDelMes.Name = "bt_imprimirAsistenciaDelMes";
             this.bt_imprimirAsistenciaDelMes.Size = new System.Drawing.Size(252, 26);
             this.bt_imprimirAsistenciaDelMes.Text = "Imprimir Asistencia Del Mes";
+            // 
+            // verAsistenciasDelDíaToolStripMenuItem
+            // 
+            this.verAsistenciasDelDíaToolStripMenuItem.Name = "verAsistenciasDelDíaToolStripMenuItem";
+            this.verAsistenciasDelDíaToolStripMenuItem.Size = new System.Drawing.Size(252, 26);
+            this.verAsistenciasDelDíaToolStripMenuItem.Text = "Ver Asistencias del día";
+            this.verAsistenciasDelDíaToolStripMenuItem.Click += new System.EventHandler(this.verAsistenciasDelDíaToolStripMenuItem_Click);
             // 
             // elLabel15
             // 
@@ -2308,23 +2326,6 @@
             // toolTip1
             // 
             this.toolTip1.IsBalloon = true;
-            // 
-            // dtp_fechadeldia
-            // 
-            this.dtp_fechadeldia.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtp_fechadeldia.Location = new System.Drawing.Point(1136, 255);
-            this.dtp_fechadeldia.Name = "dtp_fechadeldia";
-            this.dtp_fechadeldia.Size = new System.Drawing.Size(78, 20);
-            this.dtp_fechadeldia.TabIndex = 469;
-            this.dtp_fechadeldia.Value = new System.DateTime(2022, 10, 21, 18, 52, 56, 0);
-            this.dtp_fechadeldia.Visible = false;
-            // 
-            // verAsistenciasDelDíaToolStripMenuItem
-            // 
-            this.verAsistenciasDelDíaToolStripMenuItem.Name = "verAsistenciasDelDíaToolStripMenuItem";
-            this.verAsistenciasDelDíaToolStripMenuItem.Size = new System.Drawing.Size(252, 26);
-            this.verAsistenciasDelDíaToolStripMenuItem.Text = "Ver Asistencias del día";
-            this.verAsistenciasDelDíaToolStripMenuItem.Click += new System.EventHandler(this.verAsistenciasDelDíaToolStripMenuItem_Click);
             // 
             // Frm_Principal
             // 

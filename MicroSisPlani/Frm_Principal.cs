@@ -532,6 +532,33 @@ namespace MicroSisPlani
 
         }
         #endregion
+
+        private void bt_registrarHuellaDigital_Click(object sender, EventArgs e)
+        {
+
+            Frm_Filtro fil = new Frm_Filtro();
+            Frm_Regis_Huella per = new Frm_Regis_Huella();
+
+            if(lsv_person.SelectedIndices.Count == 0)
+            {
+                MessageBox.Show("Selecciona el trabajador para editar sus datos", "advertencia de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+            }
+            else
+            {
+                var lsv = lsv_person.SelectedItems[0];
+                string xidSocio = lsv.SubItems[0].Text;
+
+                fil.Show();
+                per.Buscar_Personal_ParaEditar(xidSocio);
+                per.ShowDialog();
+                fil.Hide();
+
+                if (Convert.ToString(per.Tag) == "") return;
+                {
+                    Cargar_todo_Personal();
+                }
+            }
+        }
     }
 
 }
