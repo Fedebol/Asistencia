@@ -35,6 +35,34 @@ namespace Prj_Capa_Negocio
             BD_Asistencia obj = new BD_Asistencia();
             return obj.BD_Ver_Todas_Asistencia_ParaExplorador(xvalor);
         }
+        public void RN_Registrar_Entrada_Personal(string idAsis, string idPerso, string HoIngreso, double tarde, int totalHora, string justificado)
+        {
+            BD_Asistencia obj = new BD_Asistencia();
+             obj.BD_Registrar_Entrada_Personal(idAsis, idPerso, HoIngreso, tarde, totalHora, justificado);
+        }
 
+        public void RN_Registrar_Salida_Personal(string idAsis, string idPerso, string HoSalida, double Totalhora)
+        {
+            BD_Asistencia obj = new BD_Asistencia();
+            obj.BD_Registrar_Salida_Personal(idAsis,idPerso,HoSalida,Totalhora);
+        }
+
+        public bool RN_Checar_Personal_Asistencia(string xidPerso)
+        {
+            BD_Asistencia obj = new BD_Asistencia();
+            return obj.BD_Checar_Personal_Asistencia(xidPerso);
+        }
+
+        public bool RN_Checar_Personal_Yaingreso(string xidPerso)
+        {
+            BD_Asistencia obj = new BD_Asistencia();
+            return (obj.BD_Checar_Personal_Yaingreso(xidPerso));
+        }
+
+        public bool RN_Verificar_justificacion(string xidPerso)
+        {
+            BD_Asistencia obj = new BD_Asistencia();
+            return obj.BD_Verificar_justificacion(xidPerso);
+        }
     }
 }
