@@ -109,6 +109,35 @@ namespace Prj_Capa_Datos
             return null;
         }
 
+
+        public DataTable BD_Buscar_Asistencia_deEntrada(String idperso)
+        {
+            SqlConnection xcn = new SqlConnection();
+            try
+            {
+                xcn.ConnectionString = Conectar();
+                SqlDataAdapter da = new SqlDataAdapter("Sp_Leer_asistencia_reciente", xcn);
+                da.SelectCommand.CommandType = CommandType.StoredProcedure;
+                da.SelectCommand.Parameters.AddWithValue("@idper", idperso);
+                DataTable dato = new DataTable();
+                da.Fill(dato);
+                da = null;
+                return dato;
+            }
+            catch (Exception ex)
+            {
+                if (xcn.State == ConnectionState.Open)
+                {
+                    xcn.Close();
+                }
+                MessageBox.Show("Algo malo paso: " + ex.Message, "Advertencia de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            return null;
+        }
+
+
+
+
         //registro
 
         public static bool entrada = false;
@@ -146,6 +175,11 @@ namespace Prj_Capa_Datos
                 throw new Exception("Erro al guardar" + ex.Message);    
             }
         }
+
+
+
+
+
 
         // salida
         public static bool Salida = false;
@@ -336,7 +370,6 @@ namespace Prj_Capa_Datos
             return funcionReturnValue;
         }
 
-
-
+       
     }
 }

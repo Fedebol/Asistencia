@@ -11,8 +11,13 @@ namespace Prj_Capa_Negocio
   public   class RN_Utilitario
     {
 
+        public static string RN_NroDoc(int Id_Tipo)
+        {
+           
+            return BD_Utilitario.BD_NroDoc(Id_Tipo);
+        }
 
-      
+
 
     }
 }

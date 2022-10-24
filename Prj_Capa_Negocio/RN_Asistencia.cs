@@ -35,6 +35,14 @@ namespace Prj_Capa_Negocio
             BD_Asistencia obj = new BD_Asistencia();
             return obj.BD_Ver_Todas_Asistencia_ParaExplorador(xvalor);
         }
+
+        public DataTable RN_Buscar_Asistencia_deEntrada(String idperso)
+        {
+            BD_Asistencia obj = new BD_Asistencia();
+            return obj.BD_Buscar_Asistencia_deEntrada(idperso);
+        }
+
+
         public void RN_Registrar_Entrada_Personal(string idAsis, string idPerso, string HoIngreso, double tarde, int totalHora, string justificado)
         {
             BD_Asistencia obj = new BD_Asistencia();
@@ -63,6 +71,11 @@ namespace Prj_Capa_Negocio
         {
             BD_Asistencia obj = new BD_Asistencia();
             return obj.BD_Verificar_justificacion(xidPerso);
+        }
+        public DataTable BD_Ver_Todas_Asistencia_DelDia(DateTime xdia)
+        {
+            BD_Asistencia obj = new BD_Asistencia();
+            return obj.BD_Ver_Todas_Asistencia_Deldia(xdia);
         }
     }
 }
