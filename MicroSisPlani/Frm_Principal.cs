@@ -559,6 +559,15 @@ namespace MicroSisPlani
                 }
             }
         }
+
+        private void btn_Asis_With_Huella_Click(object sender, EventArgs e)
+        {
+            Frm_Filtro fil = new Frm_Filtro();
+            Frm_Marcar_Asistencia asis = new Frm_Marcar_Asistencia();
+            fil.Show();
+            asis.ShowDialog();
+            fil.Hide();
+        }
     }
 
 }

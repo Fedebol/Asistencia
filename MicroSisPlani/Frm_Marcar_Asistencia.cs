@@ -99,6 +99,8 @@ namespace MicroSisPlani
                 var datoper = dtper.Rows[0];
                 foreach(DataRow xitem in dtper.Rows)
                 {
+
+                    if (TerminarBucle == true) return;
                     fingerByte = (byte[])xitem["FinguerPrint"];
                     NroIdPersona = Convert.ToString(xitem["Id_Pernl"]);
                     TemplateBD.DeSerialize(fingerByte);
@@ -181,7 +183,7 @@ namespace MicroSisPlani
 
                             if (BD_Asistencia.entrada == true)
                             {
-                                RN_Utilitario.RN_Actualiza_tipo_Doc(3);
+                                RN_Utilitario.RN_Actualizar_Tipo_Doc(3);
                                 lbl_msm.BackColor = Color.YellowGreen;
                                 lbl_msm.ForeColor = Color.White;
                                 lbl_msm.Text = "La entrada del personal fue registrada exitosamente";
@@ -196,11 +198,29 @@ namespace MicroSisPlani
                             }
                         }
                     }
+                    else
+                    {
+                        if (xint == totalFila)
+                        {
+                            if(TerminarBucle == false)
+                            {
+                                lbl_msm.Text = "La Huella dactilar no existe en la base de datos";
+                                lbl_msm.BackColor = Color.MistyRose;
+                                lbl_msm.ForeColor = Color.Red;
+                                tocar_timbre();
+                                lbl_Cont.Text = "10";
+                                xVerificationControl.Enabled = false;
+                                pnl_Msm.Visible = true;
+                                tmr_Conta.Enabled= true;
+                            }
+                        }
+                    }
+                    xint += 1;
                 }
             }
             catch(Exception ex)
             {
-
+                MessageBox.Show("Algo malo paso: " + ex.Message, "Advertencia de seguridad", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
 
 
@@ -306,6 +326,9 @@ namespace MicroSisPlani
 
         }
 
-
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbl_hora.Text = DateTime.Now.ToString("hh:mm:ss");
+        }
     }
 }

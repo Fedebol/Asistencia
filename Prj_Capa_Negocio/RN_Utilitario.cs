@@ -17,7 +17,10 @@ namespace Prj_Capa_Negocio
             return BD_Utilitario.BD_NroDoc(Id_Tipo);
         }
 
-
+        public static void RN_Actualizar_Tipo_Doc(int Id_Tipo)
+        {
+            BD_Utilitario.BD_Actualizar_Tipo_Doc(Id_Tipo);
+        }
 
     }
 }

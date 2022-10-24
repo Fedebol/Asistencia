@@ -817,7 +817,7 @@
             this.toolStripSeparator7,
             this.bt_solicitarJustificacion});
             this.SubMenu_Person.Name = "contextMenuStrip1";
-            this.SubMenu_Person.Size = new System.Drawing.Size(209, 244);
+            this.SubMenu_Person.Size = new System.Drawing.Size(209, 222);
             // 
             // bt_nuevoPersonal
             // 
@@ -1133,6 +1133,7 @@
             this.btn_Asis_With_Huella.TabIndex = 465;
             this.toolTip1.SetToolTip(this.btn_Asis_With_Huella, "Registrar Asistencia por Huella Digital");
             this.btn_Asis_With_Huella.UseVisualStyleBackColor = true;
+            this.btn_Asis_With_Huella.Click += new System.EventHandler(this.btn_Asis_With_Huella_Click);
             // 
             // lsv_asis
             // 
