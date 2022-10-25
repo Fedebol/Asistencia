@@ -30,7 +30,25 @@ namespace MicroSisPlani
 
             ConfiguraListview();
             ConfiguraListview_Asis();
+            CargarHorarios();
+            Verificar_Robot_de_Faltas();
             
+        }
+
+        private void Verificar_Robot_de_Faltas()
+        {
+            string tipo;
+            tipo = RN_Utilitario.RN_Listar_TipoFalta(5);
+            if (tipo.Trim() == "SI")
+            {
+                timerFalta.Start();
+                rdb_ActivarRobot.Checked = true;
+            }
+            else if (tipo.Trim() == "NO")
+            {
+                timerFalta.Stop();
+                rdb_Desact_Robot.Checked = true;
+            }
         }
 
         public void Cargar_Datos_usuario()
@@ -567,6 +585,120 @@ namespace MicroSisPlani
             fil.Show();
             asis.ShowDialog();
             fil.Hide();
+        }
+
+        private void btn_Savedrobot_Click(object sender, EventArgs e)
+        {
+            RN_Utilitario uti = new RN_Utilitario();
+
+            if (rdb_ActivarRobot.Checked == true)
+            {
+                uti.BD_Actualizar_RobotFalta(5, "SI");
+                if(BD_Utilitario.falta == true)
+                {
+                    Frm_Msm_Bueno ok = new Frm_Msm_Bueno();
+                    ok.Lbl_msm1.Text = "El Robot fue actualizado";
+                    ok.ShowDialog();
+
+                    elTab1.SelectedTabPageIndex = 0;
+                    elTabPage4.Visible = false;
+                }
+            }
+            else if (rdb_Desact_Robot.Checked == true)
+            {
+                uti.BD_Actualizar_RobotFalta(5, "NO");
+                if (BD_Utilitario.falta == true)
+                {
+                    Frm_Msm_Bueno ok = new Frm_Msm_Bueno();
+                    ok.Lbl_msm1.Text = "El Robot fue Actualizado";
+                    ok.ShowDialog();
+
+                    elTab1.SelectedTabPageIndex = 0;
+                    elTabPage4.Visible = false;
+                }
+            }
+        }
+
+        private void timerFalta_Tick(object sender, EventArgs e)
+        {
+            RN_Asistencia obj = new RN_Asistencia();
+            Frm_Filtro fil = new Frm_Filtro();
+            Frm_Advertencia adver = new Frm_Advertencia();
+            Frm_Msm_Bueno ok = new Frm_Msm_Bueno();
+            DataTable dt = new DataTable();
+            RN_Personal objper = new RN_Personal();
+
+            int HoLimite = Dtp_Hora_Limite.Value.Hour;
+            int MiLimite = Dtp_Hora_Limite.Value.Minute;
+
+            int horaCaptu = DateTime.Now.Hour; 
+            int minutocaptu = DateTime.Now.Minute;
+
+            string Dniper = "";
+            int Cant = 0;
+            int TotalItem = 0;
+            string xidpersona = "";
+            string IdAsistencia = "";
+            string xjustificacion = "";
+
+            if (horaCaptu >= HoLimite)
+            {
+                if (minutocaptu > MiLimite)
+                {
+                    dt = objper.RN_Leer_todoPersona();
+                    if (dt.Rows.Count <= 0) return;
+                    TotalItem = dt.Rows.Count;
+
+                    foreach (DataRow Registro in dt.Rows)
+                    {
+                        Dniper = Convert.ToString(Registro["DNIPR"]);
+                        xidpersona = Convert.ToString(Registro["Id_pernl"]);
+                        if (obj.RN_Checar_Personal_Asistencia(xidpersona.Trim()) == false)
+                        {
+                            if ( obj.RN_Checar_Personal_Yaingreso(xidpersona.Trim()) == false)
+                            {
+                                RN_Asistencia objA = new RN_Asistencia();
+                                EN_Asistencia asi = new EN_Asistencia();
+                                IdAsistencia = RN_Utilitario.RN_NroDoc(3);
+
+                                if (objA.RN_Verificar_justificacion(xidpersona) == true)
+                                {
+                                    xjustificacion = "Falta tiene Justificacion";
+                                }
+                                else
+                                {
+                                    xjustificacion = "No tiene justificacion";
+                                }
+
+                                obj.RN_Registrar_Falta_Personal(IdAsistencia, xidpersona, xjustificacion);
+                                if (BD_Asistencia.falta == true)
+                                {
+                                    RN_Utilitario.RN_Actualizar_Tipo_Doc(3);
+                                    Cant += 1;
+                                }
+                            }
+                        }
+                    }
+
+                    if (Cant > 1)
+                    {
+                        timerFalta.Stop();
+                        fil.Show();
+                        ok.Lbl_msm1.Text = "Un total de: " + Cant.ToString() + "/" + TotalItem + "Faltas se han registrado exitosamente";
+                        ok.ShowDialog();
+                        fil.Hide();
+                    }
+                    else
+                    {
+                        timerFalta.Stop();
+                        fil.Show();
+                        ok.Lbl_msm1.Text = "El dia de hoy no falto nadie al trabajo, las " + TotalItem + "personas marcaron Asistencia";
+                        ok.ShowDialog();
+                        fil.Hide();
+                    }
+                }
+            }
+
         }
     }
 

@@ -1762,6 +1762,7 @@
             this.btn_Savedrobot.TextStyle.Text = "Listo";
             this.btn_Savedrobot.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.btn_Savedrobot.VisualStyle = Klik.Windows.Forms.v1.EntryLib.ButtonVisualStyles.Custom;
+            this.btn_Savedrobot.Click += new System.EventHandler(this.btn_Savedrobot_Click);
             // 
             // label11
             // 
@@ -2327,6 +2328,10 @@
             // toolTip1
             // 
             this.toolTip1.IsBalloon = true;
+            // 
+            // timerFalta
+            // 
+            this.timerFalta.Tick += new System.EventHandler(this.timerFalta_Tick);
             // 
             // Frm_Principal
             // 

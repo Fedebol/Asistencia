@@ -369,7 +369,36 @@ namespace Prj_Capa_Datos
             }
             return funcionReturnValue;
         }
+        public static bool falta = false;
 
-       
+       public void BD_Registrar_Falta_Personal(string idAsis, string idPerso, string justifi)
+        {
+            SqlConnection cn = new SqlConnection(Conectar());
+            SqlCommand cmd = new SqlCommand("Sp_Registrar_Falta", cn);
+            try
+            {
+                cmd.CommandTimeout = 20;
+                cmd.CommandType = CommandType.StoredProcedure;
+
+                cmd.Parameters.AddWithValue("@IdAsis", idAsis);
+                cmd.Parameters.AddWithValue("@Id_Personal", idPerso);
+                cmd.Parameters.AddWithValue("@justificacion", justifi);
+
+                cn.Open();
+                cmd.ExecuteNonQuery();
+                cn.Close();
+
+                falta = true;
+            }
+            catch (Exception ex)
+            {
+                falta=false;
+                if (cn.State == ConnectionState.Open)
+                {
+                    cn.Close();
+                }
+                MessageBox.Show("algo salio mal" + ex.Message, "Advertencia de Seguridad", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
     }
 }

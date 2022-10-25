@@ -77,5 +77,10 @@ namespace Prj_Capa_Negocio
             BD_Asistencia obj = new BD_Asistencia();
             return obj.BD_Ver_Todas_Asistencia_Deldia(xdia);
         }
+        public void RN_Registrar_Falta_Personal(string idAsis, string idPerso, string justifi)
+        {
+            BD_Asistencia obj = new BD_Asistencia();
+            obj.BD_Registrar_Falta_Personal(idAsis, idPerso, justifi);
+        }
     }
 }

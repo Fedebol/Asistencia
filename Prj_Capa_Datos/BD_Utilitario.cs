@@ -37,7 +37,7 @@ namespace Prj_Capa_Datos
             }
         }
 
-        bool falta = false;
+        public static bool falta = false;
 
         public void BD_Actualizar_RobotFalta(int IdTipo, string serie)
         {
@@ -90,7 +90,33 @@ namespace Prj_Capa_Datos
             }
         }
 
+        public static string BD_Listar_TipoFalta(int Id_Tipo)
+        {
+            SqlConnection cn = new SqlConnection();
+            try
+            {
+                cn.ConnectionString = Conectar2();
+                SqlCommand cmd = new SqlCommand("Sp_Listado_TipoFalta", cn);
+                cmd.CommandTimeout = 20;
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.AddWithValue("@Id_Tipo", Id_Tipo);
+                string NroDoc;
 
+                cn.Open();
+                NroDoc = Convert.ToString(cmd.ExecuteScalar());
+                cn.Close();
+                return NroDoc;
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message, "Advertencia del Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (cn.State == ConnectionState.Open) cn.Close();
+                cn.Dispose();
+                cn = null;
+                return null;
+            }
+        }
 
     }
 }
