@@ -141,7 +141,12 @@ namespace MicroSisPlani
 
         private void btn_nuevoAsis_Click(object sender, EventArgs e)
         {
-           
+            Frm_Filtro fil = new Frm_Filtro();
+            Frm_Marcar_Asis_Manual asis = new Frm_Marcar_Asis_Manual();
+
+            fil.Show();
+            asis.ShowDialog();
+            fil.Hide();
         }
 
         private void bt_Explo_Asis_Click(object sender, EventArgs e)

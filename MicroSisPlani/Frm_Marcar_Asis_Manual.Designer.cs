@@ -29,15 +29,15 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle8 = new Klik.Windows.Forms.v1.Common.PaintStyle();
-            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle7 = new Klik.Windows.Forms.v1.Common.PaintStyle();
-            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle6 = new Klik.Windows.Forms.v1.Common.PaintStyle();
-            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle3 = new Klik.Windows.Forms.v1.Common.PaintStyle();
-            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle4 = new Klik.Windows.Forms.v1.Common.PaintStyle();
-            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle5 = new Klik.Windows.Forms.v1.Common.PaintStyle();
-            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle1 = new Klik.Windows.Forms.v1.Common.PaintStyle();
-            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle2 = new Klik.Windows.Forms.v1.Common.PaintStyle();
+            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle25 = new Klik.Windows.Forms.v1.Common.PaintStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Frm_Marcar_Asis_Manual));
+            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle26 = new Klik.Windows.Forms.v1.Common.PaintStyle();
+            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle27 = new Klik.Windows.Forms.v1.Common.PaintStyle();
+            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle28 = new Klik.Windows.Forms.v1.Common.PaintStyle();
+            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle29 = new Klik.Windows.Forms.v1.Common.PaintStyle();
+            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle30 = new Klik.Windows.Forms.v1.Common.PaintStyle();
+            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle31 = new Klik.Windows.Forms.v1.Common.PaintStyle();
+            Klik.Windows.Forms.v1.Common.PaintStyle paintStyle32 = new Klik.Windows.Forms.v1.Common.PaintStyle();
             this.bunifuElipse1 = new Bunifu.Framework.UI.BunifuElipse(this.components);
             this.pnl_titulo = new System.Windows.Forms.Panel();
             this.label7 = new System.Windows.Forms.Label();
@@ -108,6 +108,7 @@
             this.pnl_titulo.Name = "pnl_titulo";
             this.pnl_titulo.Size = new System.Drawing.Size(1114, 50);
             this.pnl_titulo.TabIndex = 8;
+            this.pnl_titulo.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pnl_titulo_MouseMove);
             // 
             // label7
             // 
@@ -132,6 +133,7 @@
             this.btn_Salir.Size = new System.Drawing.Size(30, 30);
             this.btn_Salir.TabIndex = 1;
             this.btn_Salir.UseVisualStyleBackColor = true;
+            this.btn_Salir.Click += new System.EventHandler(this.btn_Salir_Click);
             // 
             // label1
             // 
@@ -147,10 +149,10 @@
             this.lbl_hora.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.lbl_hora.BackgroundStyle.SolidColor = System.Drawing.Color.White;
             this.lbl_hora.BorderStyle.SolidColor = System.Drawing.Color.Gainsboro;
-            paintStyle8.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            paintStyle8.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
-            this.lbl_hora.FlashStyle = paintStyle8;
-            this.lbl_hora.ForegroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
+            paintStyle25.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            paintStyle25.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
+            this.lbl_hora.FlashStyle = paintStyle25;
+            this.lbl_hora.ForegroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
             this.lbl_hora.ForegroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl_hora.Location = new System.Drawing.Point(953, 56);
             this.lbl_hora.Name = "lbl_hora";
@@ -167,9 +169,9 @@
             this.Lbl_HoraEntrada.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.Lbl_HoraEntrada.BackgroundStyle.SolidColor = System.Drawing.Color.White;
             this.Lbl_HoraEntrada.BorderStyle.SolidColor = System.Drawing.Color.Gainsboro;
-            paintStyle7.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            paintStyle7.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
-            this.Lbl_HoraEntrada.FlashStyle = paintStyle7;
+            paintStyle26.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            paintStyle26.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
+            this.Lbl_HoraEntrada.FlashStyle = paintStyle26;
             this.Lbl_HoraEntrada.ForegroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image1")));
             this.Lbl_HoraEntrada.ForegroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.Lbl_HoraEntrada.Location = new System.Drawing.Point(3, 56);
@@ -212,10 +214,10 @@
             this.lbl_Cont.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.lbl_Cont.BackgroundStyle.SolidColor = System.Drawing.Color.White;
             this.lbl_Cont.BorderStyle.SolidColor = System.Drawing.Color.Gainsboro;
-            paintStyle6.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            paintStyle6.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
-            this.lbl_Cont.FlashStyle = paintStyle6;
-            this.lbl_Cont.ForegroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image")));
+            paintStyle27.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            paintStyle27.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
+            this.lbl_Cont.FlashStyle = paintStyle27;
+            this.lbl_Cont.ForegroundImageStyle.Image = ((System.Drawing.Image)(resources.GetObject("resource.Image2")));
             this.lbl_Cont.ForegroundImageStyle.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.lbl_Cont.Location = new System.Drawing.Point(6, 7);
             this.lbl_Cont.Name = "lbl_Cont";
@@ -274,9 +276,9 @@
             this.Lbl_Idperso.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.Lbl_Idperso.BackgroundStyle.SolidColor = System.Drawing.Color.White;
             this.Lbl_Idperso.BorderStyle.SolidColor = System.Drawing.Color.Gainsboro;
-            paintStyle3.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            paintStyle3.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
-            this.Lbl_Idperso.FlashStyle = paintStyle3;
+            paintStyle28.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            paintStyle28.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
+            this.Lbl_Idperso.FlashStyle = paintStyle28;
             this.Lbl_Idperso.Location = new System.Drawing.Point(218, 321);
             this.Lbl_Idperso.Name = "Lbl_Idperso";
             this.Lbl_Idperso.Size = new System.Drawing.Size(91, 23);
@@ -291,9 +293,9 @@
             this.lbl_Dni.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.lbl_Dni.BackgroundStyle.SolidColor = System.Drawing.Color.White;
             this.lbl_Dni.BorderStyle.SolidColor = System.Drawing.Color.Gainsboro;
-            paintStyle4.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            paintStyle4.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
-            this.lbl_Dni.FlashStyle = paintStyle4;
+            paintStyle29.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            paintStyle29.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
+            this.lbl_Dni.FlashStyle = paintStyle29;
             this.lbl_Dni.Location = new System.Drawing.Point(728, 321);
             this.lbl_Dni.Name = "lbl_Dni";
             this.lbl_Dni.Size = new System.Drawing.Size(91, 23);
@@ -317,9 +319,9 @@
             this.lbl_nombresocio.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.lbl_nombresocio.BackgroundStyle.SolidColor = System.Drawing.Color.White;
             this.lbl_nombresocio.BorderStyle.SolidColor = System.Drawing.Color.WhiteSmoke;
-            paintStyle5.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            paintStyle5.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
-            this.lbl_nombresocio.FlashStyle = paintStyle5;
+            paintStyle30.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            paintStyle30.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
+            this.lbl_nombresocio.FlashStyle = paintStyle30;
             this.lbl_nombresocio.Location = new System.Drawing.Point(218, 251);
             this.lbl_nombresocio.Name = "lbl_nombresocio";
             this.lbl_nombresocio.Size = new System.Drawing.Size(766, 32);
@@ -348,9 +350,9 @@
             this.lbl_totaltarde.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.lbl_totaltarde.BackgroundStyle.SolidColor = System.Drawing.Color.White;
             this.lbl_totaltarde.BorderStyle.SolidColor = System.Drawing.Color.Gainsboro;
-            paintStyle1.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            paintStyle1.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
-            this.lbl_totaltarde.FlashStyle = paintStyle1;
+            paintStyle31.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            paintStyle31.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
+            this.lbl_totaltarde.FlashStyle = paintStyle31;
             this.lbl_totaltarde.Location = new System.Drawing.Point(937, 321);
             this.lbl_totaltarde.Name = "lbl_totaltarde";
             this.lbl_totaltarde.Size = new System.Drawing.Size(52, 23);
@@ -365,9 +367,9 @@
             this.lbl_justifi.BackgroundStyle.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
             this.lbl_justifi.BackgroundStyle.SolidColor = System.Drawing.Color.White;
             this.lbl_justifi.BorderStyle.SolidColor = System.Drawing.Color.Gainsboro;
-            paintStyle2.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
-            paintStyle2.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
-            this.lbl_justifi.FlashStyle = paintStyle2;
+            paintStyle32.PaintType = Klik.Windows.Forms.v1.Common.PaintTypes.Solid;
+            paintStyle32.SolidColor = System.Drawing.Color.FromArgb(((int)(((byte)(253)))), ((int)(((byte)(240)))), ((int)(((byte)(191)))));
+            this.lbl_justifi.FlashStyle = paintStyle32;
             this.lbl_justifi.Location = new System.Drawing.Point(840, 321);
             this.lbl_justifi.Name = "lbl_justifi";
             this.lbl_justifi.Size = new System.Drawing.Size(91, 23);
@@ -551,6 +553,7 @@
             this.txt_dni_Buscar.ValidationStyle.PasswordChar = '\0';
             this.txt_dni_Buscar.ValidationStyle.UseSystemPasswordChar = true;
             this.txt_dni_Buscar.Value = "";
+            this.txt_dni_Buscar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_dni_Buscar_KeyDown);
             // 
             // tmr_Conta
             // 
@@ -559,6 +562,7 @@
             // timer1
             // 
             this.timer1.Enabled = true;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // toolTip1
             // 

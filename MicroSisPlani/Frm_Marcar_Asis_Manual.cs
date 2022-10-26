@@ -225,5 +225,67 @@ namespace MicroSisPlani
                 }
             }
         }
+
+        private void btn_Salir_Click(object sender, EventArgs e)
+        {
+            this.Tag = "";
+            this.Close();
+        }
+
+        private void pnl_titulo_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button == MouseButtons.Left)
+            {
+                Utilitarios ui = new Utilitarios();
+                ui.Mover_formulario(this);
+            }
+        }
+
+        private void txt_dni_Buscar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btn_buscar_Click(sender, e);
+            }
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lbl_hora.Text = DateTime.Now.ToString("hh:mm:ss");
+        }
+
+        private int sec = 10;
+        private void tmr_Conta_Tick(object sender, EventArgs e)
+        {
+            sec -= 1;
+            lbl_Cont.Text = sec.ToString();
+            lbl_Cont.Refresh();
+
+            if (sec == 0)
+            {
+                LimpiarFormulario();
+                sec = 10;
+                tmr_Conta.Stop();
+                pnl_Msm.Visible = false;
+                lbl_Cont.Text = "10";
+            }
+        }
+
+        private void LimpiarFormulario()
+        {
+            lbl_nombresocio.Text = "";
+            lbl_totaltarde.Text = "0";
+            lbl_TotalHotrabajda.Text = "0";
+            lbl_Dni.Text = "";
+            lbl_Cont.Text = "0";
+            lbl_IdAsis.Text = "";
+            Lbl_Idperso.Text = "";
+            lbl_justifi.Text = "";
+            lbl_msm.BackColor = Color.Transparent;
+            lbl_msm.Text = "";
+            picSocio.Image = null;
+            txt_dni_Buscar.Text = "";
+
+        }
     }
 }
