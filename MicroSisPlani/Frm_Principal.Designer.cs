@@ -509,6 +509,7 @@
             this.bt_exploJusti.TextStyle.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(70)))), ((int)(((byte)(70)))));
             this.bt_exploJusti.TextStyle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.bt_exploJusti.VisualStyle = Klik.Windows.Forms.v1.EntryLib.ButtonVisualStyles.Custom;
+            this.bt_exploJusti.Click += new System.EventHandler(this.bt_exploJusti_Click);
             // 
             // bt_Explo_Asis
             // 
@@ -909,6 +910,7 @@
             this.bt_solicitarJustificacion.Name = "bt_solicitarJustificacion";
             this.bt_solicitarJustificacion.Size = new System.Drawing.Size(208, 26);
             this.bt_solicitarJustificacion.Text = "Solicitar Justificacion";
+            this.bt_solicitarJustificacion.Click += new System.EventHandler(this.bt_solicitarJustificacion_Click);
             // 
             // Lbl_total
             // 
@@ -2042,6 +2044,7 @@
             this.txt_buscarjusti.Size = new System.Drawing.Size(244, 32);
             this.txt_buscarjusti.TabIndex = 31;
             this.txt_buscarjusti.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.txt_buscarjusti.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txt_buscarjusti_KeyDown);
             // 
             // lbl_totaljusti
             // 
@@ -2072,6 +2075,7 @@
             this.bt_cerrarjusti.TabIndex = 467;
             this.toolTip1.SetToolTip(this.bt_cerrarjusti, "Cerrar Explorador");
             this.bt_cerrarjusti.UseVisualStyleBackColor = true;
+            this.bt_cerrarjusti.Click += new System.EventHandler(this.bt_cerrarjusti_Click);
             // 
             // elLabel19
             // 
@@ -2115,6 +2119,7 @@
             this.lsv_justifi.Size = new System.Drawing.Size(789, 351);
             this.lsv_justifi.TabIndex = 463;
             this.lsv_justifi.UseCompatibleStateImageBehavior = false;
+            this.lsv_justifi.MouseClick += new System.Windows.Forms.MouseEventHandler(this.lsv_justifi_MouseClick);
             // 
             // subMenuJusti
             // 
@@ -2140,6 +2145,7 @@
             this.bt_aprobarJustificacion.Name = "bt_aprobarJustificacion";
             this.bt_aprobarJustificacion.Size = new System.Drawing.Size(233, 26);
             this.bt_aprobarJustificacion.Text = "Aprobar Justificacion";
+            this.bt_aprobarJustificacion.Click += new System.EventHandler(this.bt_aprobarJustificacion_Click);
             // 
             // toolStripSeparator6
             // 
@@ -2153,6 +2159,7 @@
             this.bt_editJusti.Name = "bt_editJusti";
             this.bt_editJusti.Size = new System.Drawing.Size(233, 26);
             this.bt_editJusti.Text = "Editar Justificacion";
+            this.bt_editJusti.Click += new System.EventHandler(this.bt_editJusti_Click);
             // 
             // toolStripSeparator8
             // 
@@ -2166,6 +2173,7 @@
             this.bt_ElimiJusti.Name = "bt_ElimiJusti";
             this.bt_ElimiJusti.Size = new System.Drawing.Size(233, 26);
             this.bt_ElimiJusti.Text = "Eliminar Justificacion";
+            this.bt_ElimiJusti.Click += new System.EventHandler(this.bt_ElimiJusti_Click);
             // 
             // toolStripSeparator9
             // 
@@ -2179,6 +2187,7 @@
             this.bt_mostrarJusti.Name = "bt_mostrarJusti";
             this.bt_mostrarJusti.Size = new System.Drawing.Size(233, 26);
             this.bt_mostrarJusti.Text = "Mostrar Todo las Justificacion";
+            this.bt_mostrarJusti.Click += new System.EventHandler(this.bt_mostrarJusti_Click);
             // 
             // toolStripSeparator10
             // 
@@ -2192,6 +2201,7 @@
             this.bt_CopiarNroJusti.Name = "bt_CopiarNroJusti";
             this.bt_CopiarNroJusti.Size = new System.Drawing.Size(233, 26);
             this.bt_CopiarNroJusti.Text = "Copiar Nro Justificacion";
+            this.bt_CopiarNroJusti.Click += new System.EventHandler(this.bt_CopiarNroJusti_Click);
             // 
             // aprobarJustificacionToolStripMenuItem
             // 
@@ -2205,6 +2215,7 @@
             this.bt_desaprobarJustificacion.Name = "bt_desaprobarJustificacion";
             this.bt_desaprobarJustificacion.Size = new System.Drawing.Size(233, 26);
             this.bt_desaprobarJustificacion.Text = "Desaprobar Justificacion";
+            this.bt_desaprobarJustificacion.Click += new System.EventHandler(this.bt_desaprobarJustificacion_Click);
             // 
             // elLabel16
             // 
