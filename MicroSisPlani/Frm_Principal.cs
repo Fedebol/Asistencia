@@ -76,7 +76,7 @@ namespace MicroSisPlani
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Algo malo paso: " + ex.Message, "Advertencia de seguridad", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 

@@ -115,7 +115,22 @@ namespace MicroSisPlani
 
                     if (objas.RN_Checar_Personal_Yaingreso(Lbl_Idperso.Text.Trim()) == true)
                     {
+                        dataAsis = objas.RN_Buscar_Asistencia_deEntrada(Lbl_Idperso.Text.Trim());
+                        if (dataAsis.Rows.Count < 1) return;
+                        lbl_IdAsis.Text = Convert.ToString(dataAsis.Rows[0]["Id_asis"]);
+                        objas.RN_Registrar_Salida_Personal(lbl_IdAsis.Text, Lbl_Idperso.Text, lbl_hora.Text, 8);
 
+                        if (BD_Asistencia.Salida == true)
+                        {
+                            lbl_msm.BackColor = Color.YellowGreen;
+                            lbl_msm.ForeColor = Color.White;
+                            lbl_msm.Text = "La salida del personal se registro Exitosamente";
+                            tocar_timbre();
+                            lbl_Cont.Text = "10";
+                            pnl_Msm.Visible = true;
+                            tmr_Conta.Enabled = true;
+                            return;
+                        }
                     }
                     else
                     {
@@ -153,7 +168,7 @@ namespace MicroSisPlani
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("Algo malo paso: " + ex.Message, "Advertencia de seguridad", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
         }
 
